@@ -39,7 +39,7 @@ namespace MerlinClient.Model
             routerHttp.Post(Url, PostData);
 
 
-            if (routerHttp.CookiesString.IndexOf("asus_token") < 0 || String.IsNullOrEmpty(routerHttp.CookiesString))
+            if (String.IsNullOrEmpty(routerHttp.CookiesString) || routerHttp.CookiesString.IndexOf("asus_token") < 0)
             {
                 return false;
             }
